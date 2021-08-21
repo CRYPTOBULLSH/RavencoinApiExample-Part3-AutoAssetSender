@@ -201,7 +201,7 @@ namespace Ravencoin.ApplicationCore.BusinessLogic
             ServerResponse firstTxRequest = await Transactions.GetPublicTransaction(txid, connection);
             JObject  firstTxResponse = JObject.Parse(firstTxRequest.responseContent);
 
-            //The assumption is, if we look up the vin txid from the incoming transaction, and look at the first vout - this SHOULD be the owners wallet. 
+            //The assumption is, if we look up the vin txid from the incoming transaction, and look at the first address from the matched vout - this SHOULD be the owners wallet. 
             //USE AT YOUR OWN RISK, THIS IS NOT GUARANTEED
             string secondTxId = firstTxResponse["result"]["vin"][0]["txid"].ToString();
             //Grab the vout from the vin of the first transaction. We'll use this to match the previous transactions index of the vout.
