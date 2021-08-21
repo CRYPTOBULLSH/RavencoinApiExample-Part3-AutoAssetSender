@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Ravencoin.AssetSender": {
+      "commandName": "Project"
+    }
+  }
+}
